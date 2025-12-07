@@ -14,9 +14,10 @@ This repository contains the server-side scripts for the **Cargo Discord Bot**. 
 - **Write permission** for the directory where the script is placed (to create and write to the `files` folder).
 
 ### Recommended Servers
-- **[Namecheap](https://www.namecheap.com/hosting/)**: Famous and easy to use.
-- **[HostBrr (USA)](https://my.hostbrr.com/order/main/packages/storagebox/?group_id=65)**: Cheapest class (USA).
-- **[HostBrr (Germany)](https://my.hostbrr.com/order/main/packages/storagebox/?group_id=63)**: Cheapest class (Germany).
+- **[Namecheap](https://www.namecheap.com/hosting/)**: Stellar Plus ($6.88/mo, Unlimited). Famous and easy to use (USA/SG/EU/UK).
+- **[HostBrr](https://my.hostbrr.com/order/main/packages/storagebox/?group_id=65)**: Storage Box ($7.77~/yr, 500GB~). Cheapest class (USA/Germany).
+
+*Prices and specifications are subject to change. Please check the official websites for the latest information.*
 
 ### Installation Guide
 
@@ -56,9 +57,11 @@ This repository contains the server-side scripts for the **Cargo Discord Bot**. 
 - 設置ディレクトリへの**書き込み権限**（`files` フォルダの作成・書き込みのため）
 
 ### おすすめレンタルサーバー
-- **[Xserver](https://www.xserver.ne.jp/)**: 高速・安定・定番。
-- **[Netowl (StarServer)](https://www.star.ne.jp/)**: コスパ良好。
-- **[HostBrr (最安)](https://my.hostbrr.com/order/main/packages/storagebox/?group_id=65)**: とにかく安く済ませたい場合に。
+- **[Xserver](https://www.xserver.ne.jp/)**: スタンダード (990円~/月, 500GB~)。高速・安定・定番。
+- **[Netowl (StarServer)](https://www.star.ne.jp/)**: ライト (253円~/月, 350GB~)。コスパ良好。
+- **[HostBrr](https://my.hostbrr.com/order/main/packages/storagebox/?group_id=65)**: Storage Box ($7.77~/年, 500GB~)。とにかく安く済ませたい場合に (USA/Germany)。
+
+※ 価格や仕様は変更される可能性があります。最新情報は各公式サイトをご確認ください。
 
 ### 設置手順
 
