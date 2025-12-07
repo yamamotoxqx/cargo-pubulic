@@ -231,7 +231,17 @@ if ($data_param && $sig_param) {
             <div id="upload-view">
                 <h1 class="text-2xl font-bold mb-6 text-center text-blue-400">Cargo File Share</h1>
                 
-                <div id="drop-zone" class="drop-zone border-2 border-dashed border-slate-600 rounded-lg p-12 text-center cursor-pointer hover:border-slate-500">
+                <div class="mb-6 bg-slate-700/50 p-4 rounded-lg border border-slate-600">
+                    <label class="flex items-start space-x-3 cursor-pointer">
+                        <input type="checkbox" id="consent-checkbox" class="mt-1 form-checkbox h-5 w-5 text-blue-600 rounded border-slate-500 bg-slate-700 focus:ring-blue-500 focus:ring-offset-slate-800 transition">
+                        <span class="text-sm text-slate-300 leading-snug">
+                            I confirm this file does not violate public order or morals.<br>
+                            <span class="text-xs text-slate-400">公序良俗に反するファイルではありません。</span>
+                        </span>
+                    </label>
+                </div>
+
+                <div id="drop-zone" class="drop-zone border-2 border-dashed border-slate-600 rounded-lg p-12 text-center cursor-pointer hover:border-slate-500 transition-colors">
                     <div class="mb-4">
                         <svg class="w-12 h-12 mx-auto text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
                     </div>
@@ -272,6 +282,19 @@ if ($data_param && $sig_param) {
                 const progressRing = document.getElementById('progress-ring');
                 const progressText = document.getElementById('progress-text');
                 const statusText = document.getElementById('status-text');
+                const consentCheckbox = document.getElementById('consent-checkbox');
+
+                // Helper to check consent
+                function checkConsent() {
+                    if (!consentCheckbox.checked) {
+                        alert('Please confirm the file content by checking the box.\nチェックボックスに同意してください。');
+                        // Highlight the checkbox area
+                        consentCheckbox.parentElement.parentElement.classList.add('ring-2', 'ring-red-500');
+                        setTimeout(() => consentCheckbox.parentElement.parentElement.classList.remove('ring-2', 'ring-red-500'), 2000);
+                        return false;
+                    }
+                    return true;
+                }
 
                 // Drag & Drop Events
                 dropZone.addEventListener('dragover', (e) => {
@@ -279,12 +302,18 @@ if ($data_param && $sig_param) {
                     dropZone.classList.add('dragover');
                 });
                 dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+                
                 dropZone.addEventListener('drop', (e) => {
                     e.preventDefault();
                     dropZone.classList.remove('dragover');
+                    if (!checkConsent()) return;
                     if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
                 });
-                dropZone.addEventListener('click', () => fileInput.click());
+                
+                dropZone.addEventListener('click', () => {
+                    if (checkConsent()) fileInput.click();
+                });
+                
                 fileInput.addEventListener('change', (e) => {
                     if (e.target.files.length) handleFile(e.target.files[0]);
                 });
