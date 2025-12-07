@@ -13,6 +13,11 @@ This repository contains the server-side scripts for the **Cargo Discord Bot**. 
 - **PHP 7.4** or higher
 - **Write permission** for the directory where the script is placed (to create and write to the `files` folder).
 
+### Recommended Servers
+- **[Namecheap](https://www.namecheap.com/hosting/)**: Famous and easy to use.
+- **[HostBrr (USA)](https://my.hostbrr.com/order/main/packages/storagebox/?group_id=65)**: Cheapest class (USA).
+- **[HostBrr (Germany)](https://my.hostbrr.com/order/main/packages/storagebox/?group_id=63)**: Cheapest class (Germany).
+
 ### Installation Guide
 
 1. **Download Files**
@@ -49,6 +54,11 @@ This repository contains the server-side scripts for the **Cargo Discord Bot**. 
 ### 動作要件
 - **PHP 7.4** 以上
 - 設置ディレクトリへの**書き込み権限**（`files` フォルダの作成・書き込みのため）
+
+### おすすめレンタルサーバー
+- **[Xserver](https://www.xserver.ne.jp/)**: 高速・安定・定番。
+- **[Netowl (StarServer)](https://www.star.ne.jp/)**: コスパ良好。
+- **[HostBrr (最安)](https://my.hostbrr.com/order/main/packages/storagebox/?group_id=65)**: とにかく安く済ませたい場合に。
 
 ### 設置手順
 
