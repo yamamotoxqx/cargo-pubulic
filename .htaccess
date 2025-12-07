@@ -1,0 +1,23 @@
+# Security settings
+Options -Indexes
+
+# Deny access to dotfiles (like .env, .git, .htaccess)
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect temp directory and prevent PHP execution in files
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Block access to temp directory
+    RewriteRule ^temp/ - [F,L]
+    
+    # Block PHP execution in files directory (prevent direct access to .php files in files/)
+    RewriteRule ^files/.*\.php$ - [F,L]
+    RewriteRule ^files/.*\.phtml$ - [F,L]
+    RewriteRule ^files/.*\.pl$ - [F,L]
+    RewriteRule ^files/.*\.py$ - [F,L]
+    RewriteRule ^files/.*\.cgi$ - [F,L]
+</IfModule>
